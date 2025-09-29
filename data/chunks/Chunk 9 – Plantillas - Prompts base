@@ -1,0 +1,11 @@
+{
+ "brief_schema": {
+  "business_name":"TacoLoco",
+  "industry":"restaurant",
+  "goal":"reservations",
+  "color":"#FF6A00",
+  "copy_tone":"fun,young"
+ },
+ "landing_sections":["Hero","Social-proof","Features","How-it-works","Pricing","FAQ","Footer"],
+ "prompt_UX":"You are a senior UI designer..."
+}

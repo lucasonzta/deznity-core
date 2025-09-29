@@ -1,0 +1,7 @@
+[
+  {"id":"pm","name":"Gantt","llm":"gpt-4.1","role":"Planifica, asigna tareas, monitorea deadlines","kpi":"Desvío <=5%"},
+  {"id":"web","name":"Flow","llm":"gpt-4o","role":"Genera/exporta sitio Webflow o Next","kpi":"Lighthouse >=95"},
+  {"id":"ux","name":"Lense","llm":"claude-3.5-sonnet","role":"Wireframes, tokens, Figma","kpi":"SUS >=85"},
+  {"id":"seo","name":"Quill","llm":"gemini-2.5-flash","role":"Copy, keywords, schema","kpi":"Top-10 SERP >=3 kws"},
+  {"id":"qa","name":"Bugz","llm":"gpt-5-mini","role":"Tests E2E, accesibilidad","kpi":"Bugs > P3 = 0"}
+]

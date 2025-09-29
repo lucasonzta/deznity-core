@@ -1,0 +1,9 @@
+{
+  "index_name": "deznity-core",
+  "dimension": 1536,
+  "metric": "cosine",
+  "namespaces": {
+    "deznity-core": "Biblia + SOPs + templates",
+    "client-{uuid}": "Briefs semilla por cliente"
+  }
+}

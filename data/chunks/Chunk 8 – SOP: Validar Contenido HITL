@@ -1,0 +1,5 @@
+1. Si sector ∈ {health, legal, finance}
+2. Crear ticket "HITL-review"
+3. Reviewer humano SLA 24h
+4. Approve → publish; Reject → back to SEO Agent
+5. Log en Pinecone namespace logs

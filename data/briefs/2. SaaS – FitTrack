@@ -1,0 +1,11 @@
+{
+ "business_name": "FitTrack",
+ "industry": "saas",
+ "goal": "generate trials",
+ "color": "#0066FF",
+ "logo_url": "https://.../fittrack.png",
+ "copy_tone": "professional, inspiring",
+ "target_geo": "LatAm",
+ "pages": ["home","features","pricing","blog","signup"],
+ "budget": "growth"
+}
