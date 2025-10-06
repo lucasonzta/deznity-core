@@ -1,0 +1,164 @@
+{
+  "name": "Financial Snapshots",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "value": "0 0 * * *"
+            }
+          ]
+        }
+      },
+      "id": "cron-daily",
+      "name": "Daily Cron",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": "organizations",
+        "where": {
+          "conditions": [
+            {
+              "column": "status",
+              "condition": "equal",
+              "value": "active"
+            }
+          ]
+        }
+      },
+      "id": "get-organizations",
+      "name": "Get Organizations",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": "subscriptions",
+        "where": {
+          "conditions": [
+            {
+              "column": "status",
+              "condition": "equal",
+              "value": "active"
+            }
+          ]
+        }
+      },
+      "id": "get-subscriptions",
+      "name": "Get Subscriptions",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": "invoices",
+        "where": {
+          "conditions": [
+            {
+              "column": "created_at",
+              "condition": "gte",
+              "value": "={{ new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString() }}"
+            }
+          ]
+        }
+      },
+      "id": "get-daily-revenue",
+      "name": "Get Daily Revenue",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "table": "finance_revenue_daily",
+        "columns": {
+          "date": "={{ new Date().toISOString().split('T')[0] }}",
+          "mrr": "={{ $json.reduce((sum, sub) => sum + (sub.amount || 0), 0) }}",
+          "daily_revenue": "={{ $json.reduce((sum, inv) => sum + (inv.amount_paid || 0), 0) }}",
+          "active_subscriptions": "={{ $json.length }}",
+          "created_at": "={{ new Date().toISOString() }}"
+        }
+      },
+      "id": "create-snapshot",
+      "name": "Create Snapshot",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Daily Cron": {
+      "main": [
+        [
+          {
+            "node": "Get Organizations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Organizations": {
+      "main": [
+        [
+          {
+            "node": "Get Subscriptions",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Subscriptions": {
+      "main": [
+        [
+          {
+            "node": "Get Daily Revenue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Daily Revenue": {
+      "main": [
+        [
+          {
+            "node": "Create Snapshot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1"
+}

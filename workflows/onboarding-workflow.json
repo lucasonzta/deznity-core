@@ -1,0 +1,174 @@
+{
+  "name": "Customer Onboarding",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "onboarding-webhook",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-onboarding",
+      "name": "Onboarding Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ],
+      "webhookId": "onboarding-webhook"
+    },
+    {
+      "parameters": {
+        "operation": "select",
+        "table": "organizations",
+        "where": {
+          "conditions": [
+            {
+              "column": "id",
+              "condition": "equal",
+              "value": "={{ $json.organization_id }}"
+            }
+          ]
+        }
+      },
+      "id": "get-organization",
+      "name": "Get Organization",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "table": "projects",
+        "columns": {
+          "name": "Welcome Project",
+          "description": "Initial project setup for new customer",
+          "organization_id": "={{ $json.organization_id }}",
+          "status": "draft",
+          "type": "website"
+        }
+      },
+      "id": "create-project",
+      "name": "Create Project",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.openrouter.ai/api/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{ $env.OPENROUTER_API_KEY }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "model",
+              "value": "openai/gpt-4"
+            },
+            {
+              "name": "messages",
+              "value": "=[{\"role\": \"system\", \"content\": \"You are Deznity, a Self-Building AI Growth Engine. Generate a welcome message for a new customer.\"}, {\"role\": \"user\", \"content\": \"Generate a welcome message for organization: {{ $json.name }}\"}]"
+            }
+          ]
+        }
+      },
+      "id": "generate-welcome",
+      "name": "Generate Welcome",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "table": "activities",
+        "columns": {
+          "organization_id": "={{ $json.organization_id }}",
+          "type": "onboarding_started",
+          "description": "Customer onboarding initiated",
+          "metadata": "={{ JSON.stringify($json) }}"
+        }
+      },
+      "id": "log-onboarding",
+      "name": "Log Onboarding",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1120,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Onboarding Webhook": {
+      "main": [
+        [
+          {
+            "node": "Get Organization",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Organization": {
+      "main": [
+        [
+          {
+            "node": "Create Project",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Project": {
+      "main": [
+        [
+          {
+            "node": "Generate Welcome",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Welcome": {
+      "main": [
+        [
+          {
+            "node": "Log Onboarding",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {},
+  "versionId": "1"
+}
