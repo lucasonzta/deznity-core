@@ -1,0 +1,7 @@
+[
+  {"id":"mkt","name":"Buzz","llm":"gemini-flash","role":"Ads, social posts","kpi":"CTR >=3%"},
+  {"id":"sales","name":"Closo","llm":"gpt-4.1","role":"Demo, ROI calc, pricing","kpi":"Close-rate >=25%"},
+  {"id":"sup","name":"Help","llm":"gpt-4o","role":"FAQ, tickets","kpi":"CSAT >=4.6"},
+  {"id":"fin","name":"Cash","llm":"gpt-4.1","role":"Cashflow, MRR forecast","kpi":"Error <=5%"},
+  {"id":"strat","name":"Atlas","llm":"claude-3.5-sonnet","role":"TAM, competitividad","kpi":"Update semanal"}
+]

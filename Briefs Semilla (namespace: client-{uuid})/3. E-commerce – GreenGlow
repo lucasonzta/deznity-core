@@ -1,0 +1,11 @@
+{
+ "business_name": "GreenGlow",
+ "industry": "ecommerce",
+ "goal": "boost product sales",
+ "color": "#00AA55",
+ "logo_url": "https://.../greenglow.png",
+ "copy_tone": "eco, trustworthy",
+ "target_geo": "Spain",
+ "pages": ["home","catalog","product","checkout","about","blog"],
+ "budget": "enterprise"
+}

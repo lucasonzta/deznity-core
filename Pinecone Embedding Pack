@@ -1,0 +1,56 @@
+[
+  {
+    "id": "manifesto-001",
+    "namespace": "deznity-core",
+    "tags": ["manifesto","vision","values"],
+    "text": "Deznity = Self-building AI Growth Engine. Misión: Democratizar presencia digital premium 10× más barata y 20× más rápida. Visión 2027: 1 M PYMEs; 100 M ARR; 20 humanos. Valores: Data-driven, Ethical-AI, Zero-friction, Nimbleness, Iterative, Transparency, Yield. North-Star Metric: MRR activo sin intervención humana > 90 %."
+  },
+  {
+    "id": "roadmap-002",
+    "namespace": "deznity-core",
+    "tags": ["roadmap","milestones"],
+    "text": "Roadmap MVP: Semana -2 a 0 → validación concierge con 3 clientes reales. Semana 1-2 → infraestructura y agentes core. Semana 3-5 → client portal y 20 plantillas. Semana 6-8 → go-to-market con 20 clientes beta. Día 90 → meta: 10k MRR, churn < 2 %, CAC < 500 USD. Año 1 → 200k MRR y ronda Seed 2 M USD."
+  },
+  {
+    "id": "agents-003",
+    "namespace": "deznity-core",
+    "tags": ["agents","llm","roles"],
+    "text": "Agentes de Deznity: PM Agent (Gantt, GPT-4.1, planifica y asigna tareas, KPI: desvío tiempo <=5 %). Web Agent (Flow, GPT-4o, genera sitios Webflow/Next, KPI: Lighthouse >=95). UX Agent (Lense, Claude 3.5, wireframes y tokens, KPI: SUS >=85). SEO Agent (Quill, Gemini 2.5, copy+schema, KPI: Top-10 SERP >=3 kws). QA Agent (Bugz, GPT-5 Mini, tests y accesibilidad, KPI: 0 bugs críticos). Marketing Agent (Buzz, Gemini Flash, campañas ads y social, KPI: CTR >=3 %). Sales Agent (Closo, GPT-4.1, demos y pricing, KPI: close-rate >=25 %). Support Agent (Help, GPT-4o, tickets y FAQs, KPI: CSAT >=4.6). Finance Agent (Cash, GPT-4.1, predicciones de MRR, KPI: error <=5 %). Strategy Agent (Atlas, Claude 3.5, TAM y competitividad, KPI: actualizaciones semanales)."
+  },
+  {
+    "id": "stack-004",
+    "namespace": "deznity-core",
+    "tags": ["stack","infra"],
+    "text": "Stack técnico oficial: Supabase = DB + auth + storage. Vercel = hosting + edge. Stripe = billing + invoicing. Pinecone = memoria vectorial. Modal = compute serverless GPU. n8n = automatizaciones. OpenRouter = gateway de modelos. Sentry = tracking de errores. GitHub = repos y CI/CD. MailerLite = funnels de correo."
+  },
+  {
+    "id": "sop-project-005",
+    "namespace": "deznity-core",
+    "tags": ["sop","project","workflow"],
+    "text": "SOP – Crear proyecto cliente. Paso 1: Cliente llena brief en Typeform. Paso 2: PM Agent crea DAG de tareas. Paso 3: Web Agent selecciona plantilla. Paso 4: UX Agent ajusta tokens e imágenes. Paso 5: SEO Agent genera copy y schema. Paso 6: QA Agent hace tests. Paso 7: Deploy en Vercel. Paso 8: Client portal para revisión. Paso 9: Si aprobado, Stripe activa el cobro. Si rechazado, vuelve al loop de fixes."
+  },
+  {
+    "id": "sop-hitl-006",
+    "namespace": "deznity-core",
+    "tags": ["sop","compliance","hitl"],
+    "text": "SOP – Human-in-the-Loop. 1: SEO Agent marca si sector ∈ {salud, legal, finanzas}. 2: Crear ticket HITL-review. 3: Revisor humano CX Lead con SLA 24h. 4: Aprueba → publicar. Rechaza → regresa al SEO Agent. 5: Log de decisión guardado en Pinecone namespace logs/HITL-log."
+  },
+  {
+    "id": "sop-scale-007",
+    "namespace": "deznity-core",
+    "tags": ["sop","scale","plans"],
+    "text": "SOP – Escalar proyecto. Trigger: solicitud de upgrade o exceso de uso. Pasos: 1 PM Agent abre tarea scale. 2 Revisa uso actual en Supabase/Vercel. 3 Propuesta de nuevo plan Growth/Enterprise. 4 Sales Agent envía email con link Stripe. 5 Al aprobar upgrade, se aumentan cuotas y habilita repos white-label."
+  },
+  {
+    "id": "templates-008",
+    "namespace": "deznity-core",
+    "tags": ["templates","brief","seo","ux"],
+    "text": "Plantillas y prompts base. Brief mínimo (ejemplo JSON con negocio, industria, objetivo, color, tono). Copy SEO estándar: H1 con keyword principal y ciudad, meta-description 150-160 chars, primer párrafo con problema+solución, schema LocalBusiness/Menu/FAQ, densidad 1-1.5 %. Landing estándar: Hero, Social-proof, Features, How-it-works, Pricing, FAQ, Footer. Prompt UX Agent: 'You are a senior UI designer... Output: Figma tokens, 3 variantes hero, mobile-first, WCAG 2.2'."
+  },
+  {
+    "id": "indexes-009",
+    "namespace": "deznity-core",
+    "tags": ["pinecone","indexes"],
+    "text": "Namespaces definidos: deznity-core = Biblia central. client-{uuid} = briefs, historial y decisiones. templates = librería de plantillas. logs = auditoría, errores, revisiones HITL."
+  }
+]

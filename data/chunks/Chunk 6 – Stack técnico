@@ -1,0 +1,10 @@
+Supabase = Postgres + auth + storage
+Vercel = Front hosting + edge
+Stripe = Billing + invoicing
+Pinecone = Vector memory
+Modal = GPU serverless
+n8n = Automations
+OpenRouter = LLM gateway
+Sentry = Error tracking
+GitHub = Repo + CI
+MailerLite = Email funnels
