@@ -1,0 +1,11 @@
+graph TD
+A[Brief]-->B[PM: plan]
+B-->C[Web: template]
+C-->D[UX: diseño]
+D-->E[SEO: copy]
+E-->F[QA: tests]
+F-->G[Deploy Vercel]
+G-->H[Portal cliente]
+H-->I{Aprobado?}
+I--Sí-->J[Stripe charge]
+I--No-->K[Loop back]
