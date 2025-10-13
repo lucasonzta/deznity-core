@@ -1,0 +1,112 @@
+[
+  {
+    "area": "Arquitectura Core",
+    "currentState": "Sistema monolítico con agentes acoplados",
+    "proposedImprovement": "Implementar arquitectura de microservicios para cada agente especializado",
+    "impact": "critical",
+    "effort": "high",
+    "priority": 16,
+    "implementation": "Containerizar cada agente como servicio independiente con API REST",
+    "source": "Documento Fundacional - Visión 2027"
+  },
+  {
+    "area": "Escalabilidad",
+    "currentState": "Procesamiento secuencial limitado a 30 clientes/hora",
+    "proposedImprovement": "Implementar procesamiento paralelo y auto-scaling",
+    "impact": "critical",
+    "effort": "high",
+    "priority": 15,
+    "implementation": "Kubernetes con HPA (Horizontal Pod Autoscaler) y message queues",
+    "source": "Documento Fundacional - 1 millón de PYMEs"
+  },
+  {
+    "area": "Seguridad",
+    "currentState": "Autenticación básica y API keys en .env",
+    "proposedImprovement": "Implementar sistema de seguridad robusto con JWT y RBAC",
+    "impact": "critical",
+    "effort": "medium",
+    "priority": 14,
+    "implementation": "JWT con refresh tokens, RBAC, API rate limiting, secrets management",
+    "source": "Best Practices - Security"
+  },
+  {
+    "area": "Performance",
+    "currentState": "Latencia de ~2 minutos por cliente",
+    "proposedImprovement": "Optimizar para <30 segundos por cliente",
+    "impact": "high",
+    "effort": "medium",
+    "priority": 12,
+    "implementation": "Cache layer con Redis, optimización de consultas Pinecone",
+    "source": "Documento Fundacional - 20× más rápida"
+  },
+  {
+    "area": "Testing",
+    "currentState": "Testing manual y limitado",
+    "proposedImprovement": "Implementar testing automatizado completo con CI/CD",
+    "impact": "high",
+    "effort": "medium",
+    "priority": 11,
+    "implementation": "Jest, Cypress, GitHub Actions, coverage >90%",
+    "source": "Documento Fundacional - Valores: Data-driven"
+  },
+  {
+    "area": "Monitoreo",
+    "currentState": "Logging básico en Supabase",
+    "proposedImprovement": "Sistema de observabilidad completo con métricas y alertas",
+    "impact": "high",
+    "effort": "medium",
+    "priority": 10,
+    "implementation": "Prometheus + Grafana + ELK Stack + Sentry",
+    "source": "Documento Fundacional - Stack: Sentry"
+  },
+  {
+    "area": "Error Handling",
+    "currentState": "Manejo de errores básico con try/catch",
+    "proposedImprovement": "Sistema de manejo de errores robusto con circuit breakers",
+    "impact": "high",
+    "effort": "medium",
+    "priority": 9,
+    "implementation": "Circuit breakers, retry policies, error boundaries, graceful degradation",
+    "source": "Best Practices - Resilience"
+  },
+  {
+    "area": "Documentación",
+    "currentState": "Documentación dispersa y limitada",
+    "proposedImprovement": "Sistema de documentación técnica completo y automatizado",
+    "impact": "medium",
+    "effort": "low",
+    "priority": 8,
+    "implementation": "OpenAPI/Swagger, JSDoc, README automatizado",
+    "source": "Documento Fundacional - Valores: Transparency"
+  },
+  {
+    "area": "Code Quality",
+    "currentState": "Código sin linting ni formateo consistente",
+    "proposedImprovement": "Implementar estándares de código y herramientas de calidad",
+    "impact": "medium",
+    "effort": "low",
+    "priority": 7,
+    "implementation": "ESLint, Prettier, Husky, lint-staged, SonarQube",
+    "source": "Best Practices - Code Quality"
+  },
+  {
+    "area": "API Design",
+    "currentState": "APIs internas sin documentación ni versionado",
+    "proposedImprovement": "Diseñar APIs RESTful con versionado y documentación automática",
+    "impact": "medium",
+    "effort": "low",
+    "priority": 6,
+    "implementation": "RESTful APIs, versionado semántico, OpenAPI/Swagger",
+    "source": "Best Practices - API Design"
+  },
+  {
+    "area": "Database Optimization",
+    "currentState": "Consultas directas sin optimización",
+    "proposedImprovement": "Optimizar consultas y implementar índices apropiados",
+    "impact": "medium",
+    "effort": "low",
+    "priority": 5,
+    "implementation": "Query optimization, database indexing, connection pooling",
+    "source": "Best Practices - Database"
+  }
+]
