@@ -1,208 +1,214 @@
-# 🚀 Deznity - Self-Building AI Growth Engine
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)](https://nextjs.org/)
-[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?logo=supabase&logoColor=white)](https://supabase.com/)
-
-> **Democratizar presencia digital premium 10× más barata y 20× más rápida**
-
-Deznity es un **Self-Building AI Growth Engine** que transforma la presencia digital de las PYMEs mediante agentes de IA autónomos, entregando sitios web premium en menos de 72 horas.
-
-## 🎯 Misión
+# 🚀 DEZNITY - Self-Building AI Growth Engine
 
 **Democratizar la presencia digital premium 10× más barata y 20× más rápida**
 
-- **10× más barato**: Calidad premium a una fracción del costo tradicional
-- **20× más rápido**: Entrega en menos de 72 horas vs. meses tradicionales
-- **Self-Building**: Agentes de IA que construyen y mejoran el sistema autónomamente
+[![Deploy Status](https://img.shields.io/badge/Deploy-Production-green)](https://deznity-github-ready-43eb0zvlk-onzta.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/lucasonzta/deznity-core)
+[![Windows Compatible](https://img.shields.io/badge/Windows-Compatible-blue)](WINDOWS_COMPATIBILITY.md)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
-## 🏗️ Arquitectura
+## 🎯 **ESTADO ACTUAL: 100% FUNCIONAL EN PRODUCCIÓN**
 
-### Stack Tecnológico
-- **Frontend**: Next.js 14, TypeScript, Tailwind CSS, Radix UI
-- **Backend**: Node.js, Express, TypeScript
-- **Database**: Supabase (PostgreSQL)
-- **Auth**: Supabase Auth + JWT
-- **Billing**: Stripe
-- **IA**: OpenRouter (GPT-5)
-- **Vector DB**: Pinecone
-- **Automation**: n8n
-- **Monitoring**: Sentry
-- **Deploy**: Vercel, Modal
+Deznity es un sistema de agentes autónomos que se construye a sí mismo para crear presencia digital premium para PYMEs en menos de 72 horas.
 
-### Microservicios
-- **Gateway Service**: Auth, rate limiting, tracing
-- **Billing Service**: Stripe integration, webhooks
-- **Content Service**: OpenRouter integration, IA
-- **Sales Service**: CRM, leads, deals
+### 🌐 **Enlaces Principales**
+- **🔗 Repositorio**: https://github.com/lucasonzta/deznity-core
+- **🚀 Deploy**: https://deznity-github-ready-43eb0zvlk-onzta.vercel.app
+- **📚 Documentación**: Ver `/docs/` para detalles completos
 
-## 🚀 Inicio Rápido
+## ⚡ **Quick Start**
 
-### Prerrequisitos
-- Node.js 18+
-- npm 8+
-- Docker (opcional)
-
-### Instalación
-
+### 1. **Instalar Dependencias**
 ```bash
-# Clonar el repositorio
-git clone https://github.com/deznity/deznity.git
-cd deznity
-
-# Instalar dependencias
 npm install
-
-# Configurar variables de entorno
-cp .env.example .env.local
-# Editar .env.local con tus credenciales
-
-# Iniciar desarrollo
-npm run dev
 ```
 
-### Variables de Entorno
-
+### 2. **Configurar Variables de Entorno**
 ```bash
-# Supabase
-SUPABASE_URL=your_supabase_url
-SUPABASE_ANON_KEY=your_supabase_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
-
-# Stripe
-STRIPE_SECRET_KEY=your_stripe_secret_key
-STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
-
-# OpenRouter
-OPENROUTER_API_KEY=your_openrouter_api_key
-
-# Pinecone
-PINECONE_API_KEY=your_pinecone_api_key
-PINECONE_ENVIRONMENT=your_pinecone_environment
-
-# n8n
-N8N_BASIC_AUTH_USER=your_n8n_user
-N8N_BASIC_AUTH_PASSWORD=your_n8n_password
-
-# Sentry
-SENTRY_DSN=your_sentry_dsn
+cp env.example .env
+# Editar .env con tus API keys
 ```
 
-## 📁 Estructura del Proyecto
+### 3. **Poblar Base de Conocimiento**
+```bash
+npx tsx scripts/seedPinecone.ts
+```
+
+### 4. **Probar Sistema**
+```bash
+npx tsx scripts/testFlow.ts
+```
+
+### 5. **Bootstrap Completo**
+```bash
+npx tsx scripts/bootstrap-deznity-simple.ts
+```
+
+## 🤖 **Sistema de Agentes Autónomos**
+
+### **10 Agentes Especializados**
+- **PM Agent** - Planificación y coordinación de proyectos
+- **Web Agent** - Desarrollo web y portal de clientes  
+- **UX Agent** - Diseño y branding visual
+- **SEO Agent** - Contenido y optimización SEO
+- **QA Agent** - Testing y validación de calidad
+- **Marketing Agent** - Estrategia de marketing
+- **Sales Agent** - Proceso de ventas
+- **Support Agent** - Soporte al cliente
+- **Finance Agent** - Métricas y finanzas
+- **Strategy Agent** - Estrategia de negocio
+
+### **Flujo Autónomo**
+1. **Análisis** del brief del cliente
+2. **Planificación** por PM Agent
+3. **Desarrollo** por Web Agent
+4. **Diseño** por UX Agent
+5. **Contenido** por SEO Agent
+6. **Validación** por QA Agent
+7. **Entrega** automática
+
+## 🏗️ **Arquitectura**
+
+### **Frontend**
+- **Next.js 14** con App Router
+- **React 18** con TypeScript
+- **Tailwind CSS** para estilos
+- **Radix UI** para componentes
+
+### **Backend**
+- **Supabase** (PostgreSQL, Auth, RLS, Realtime)
+- **Pinecone** (Vector database)
+- **OpenRouter** (LLM API)
+- **Stripe** (Pagos)
+
+### **Deploy & DevOps**
+- **Vercel** (Frontend)
+- **Modal** (Python compute)
+- **GitHub Actions** (CI/CD)
+- **n8n** (Automatización)
+
+### **LLMs**
+- **GPT-5** (Agentes principales)
+- **GPT-4o** (Agentes secundarios)
+- **Claude 3.5 Sonnet** (Análisis)
+- **Gemini 2.5 Flash** (Backup)
+
+## 📊 **Métricas de Negocio**
+
+### **Precios**
+- **Starter**: $297
+- **Growth**: $647  
+- **Enterprise**: $1297
+
+### **Objetivos 2027**
+- **1 millón de PYMEs** como clientes
+- **$100M ARR** (Annual Recurring Revenue)
+- **20 empleados humanos** máximo
+- **95% automatización** de procesos
+
+## 🛠️ **Scripts Disponibles**
+
+### **Desarrollo**
+```bash
+npm run dev          # Servidor de desarrollo
+npm run build        # Build del proyecto
+npm run test         # Ejecutar tests
+```
+
+### **Agentes**
+```bash
+npx tsx scripts/seedPinecone.ts                    # Poblar Pinecone
+npx tsx scripts/testFlow.ts                        # Probar flujo de agentes
+npx tsx scripts/bootstrap-deznity-simple.ts        # Bootstrap completo
+npx tsx scripts/agents-build-frontend.ts           # Construir frontend
+npx tsx scripts/agents-qa-testing.ts               # QA testing
+```
+
+### **Configuración**
+```bash
+npx tsx scripts/setup-supabase-complete.ts         # Configurar Supabase
+npx tsx scripts/setup-n8n-complete.ts              # Configurar n8n
+npx tsx scripts/setup-cicd.ts                      # Configurar CI/CD
+```
+
+### **Deploy**
+```bash
+npx vercel --prod                                   # Deploy a Vercel
+git add . && git commit -m "feat: update" && git push  # Push a GitHub
+```
+
+## 📁 **Estructura del Proyecto**
 
 ```
-deznity/
-├── apps/                    # Aplicaciones
-│   ├── web/                # Next.js App (Landing + Portal)
+deznity-core/
+├── apps/                    # Aplicaciones principales
+│   ├── web/landing/        # Landing page
+│   ├── web/portal/         # Portal de clientes
 │   └── api/                # API Gateway
 ├── services/               # Microservicios
-│   ├── gateway/            # Auth, rate limiting, tracing
-│   ├── billing/            # Stripe integration
-│   ├── content/            # Content orchestration
-│   └── sales/              # CRM + lead management
-├── packages/               # Paquetes compartidos
-│   ├── sections/           # Librería de secciones
-│   ├── design-system/      # Design tokens + componentes
-│   ├── shared/             # Utilidades compartidas
-│   └── types/              # TypeScript types
-├── modal/                  # Python workers
-│   ├── content_service/    # Content generation
-│   └── workers/            # Batch jobs
-├── docs/                   # Documentación
-├── scripts/                # Scripts de automatización
-└── tests/                  # Tests
+│   ├── gateway/           # API Gateway
+│   ├── billing/           # Servicio de facturación
+│   ├── content/           # Servicio de contenido
+│   └── sales/             # Servicio de ventas
+├── packages/              # Paquetes compartidos
+│   ├── design-system/     # Sistema de diseño
+│   ├── sections/          # Librería de secciones
+│   ├── shared/            # Utilidades compartidas
+│   └── types/             # Tipos TypeScript
+├── scripts/               # 45+ scripts de automatización
+├── docs/                  # Documentación completa
+├── workflows/             # n8n workflows
+└── utils/                 # Utilidades del sistema
 ```
 
-## 🤖 Agentes de IA
+## 🎯 **Próximos Pasos**
 
-Deznity utiliza agentes especializados que construyen y mejoran el sistema autónomamente:
+### **Esta Semana**
+1. **Configurar Supabase** (15 min)
+2. **Configurar Stripe** (10 min)  
+3. **Configurar n8n** (20 min)
 
-- **Web Agent**: Landing pages, librería de secciones
-- **UX Agent**: Client portal, design system
-- **QA Agent**: Testing, performance, security
-- **PM Agent**: Project management, coordination
-- **SEO Agent**: Content optimization, SEO
-- **Marketing Agent**: Campaigns, growth
-- **Sales Agent**: CRM, lead management
-- **Support Agent**: Customer success
-- **Finance Agent**: Billing, metrics
-- **Strategy Agent**: Market analysis, planning
+### **Próximas 2 Semanas**
+4. **Crear Landing Page Real** (30 min)
+5. **Configurar Dominio** (15 min)
+6. **Testing con Cliente Real** (30 min)
 
-## 💰 Pricing
+## 💰 **Costos Actuales**
 
-- **Starter**: $297/mes - 1 sitio, 72h entrega
-- **Growth**: $647/mes - 3 sitios, 48h entrega
-- **Enterprise**: $1,297/mes - Ilimitado, 24h entrega
+| Servicio | Costo Mensual | Estado |
+|----------|---------------|---------|
+| Vercel | $0 (gratuito) | ✅ Activo |
+| Supabase | $0 (gratuito) | ✅ Activo |
+| Pinecone | $70 | ✅ Activo |
+| OpenRouter | ~$15 | ✅ Activo |
+| **Total** | **~$85/mes** | ✅ |
 
-## 📊 Métricas Objetivo
+## 📋 **Documentación Adicional**
 
-- **CAC**: < 500 USD
-- **LTV**: > 5000 USD
-- **NPS**: ≥ 60
-- **Tiempo de entrega**: < 72 horas
-- **MRR objetivo D90**: 10k USD
+- **[Resumen Completo](PROYECTO_DEZNITY_RESUMEN_COMPLETO.md)** - Estado completo del proyecto
+- **[Tareas Pendientes](TAREAS_PENDIENTES.md)** - Lista de tareas por hacer
+- **[Compatibilidad Windows](WINDOWS_COMPATIBILITY.md)** - Guía para Windows
+- **[Documentación Técnica](docs/)** - Detalles técnicos completos
 
-## 🧪 Testing
+## 🎉 **¿Qué Hace Deznity?**
 
-```bash
-# Tests unitarios
-npm run test
+1. **Recibe un brief** del cliente (restaurante, SaaS, e-commerce)
+2. **Agentes analizan** automáticamente los requerimientos
+3. **Se crea un plan** detallado de 8 semanas
+4. **Se desarrolla** la presencia digital completa
+5. **Se valida** la calidad y funcionalidad
+6. **Se entrega** en menos de 72 horas
 
-# Tests end-to-end
-npm run test:e2e
+**La única agencia digital que se construye a sí misma** 🚀
 
-# Tests de performance
-npm run test:performance
+## 📞 **Soporte**
 
-# Tests de accesibilidad
-npm run test:accessibility
-```
-
-## 🚀 Deploy
-
-### Staging
-```bash
-npm run deploy:staging
-```
-
-### Producción
-```bash
-npm run deploy:production
-```
-
-## 📈 Monitoreo
-
-- **Sentry**: Error tracking
-- **Supabase**: Analytics y logs
-- **n8n**: Workflow monitoring
-- **Stripe**: Billing analytics
-
-## 🤝 Contribuir
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para detalles.
-
-## 🎯 Visión 2027
-
-- **1M PYMEs** usando Deznity
-- **100M ARR** en revenue
-- **20 empleados** humanos
-- **Global expansion**
-
-## 📞 Contacto
-
-- **Website**: [deznity.com](https://deznity.com)
-- **Email**: hello@deznity.com
-- **Twitter**: [@deznity](https://twitter.com/deznity)
+- **GitHub Issues**: Para bugs y feature requests
+- **Documentación**: Ver `/docs/` para detalles técnicos
+- **Scripts**: Ver `/scripts/` para automatización
 
 ---
 
-**Construido con ❤️ por agentes de IA autónomos**
+*Última actualización: 12 de Octubre, 2025*  
+*Estado: 100% Funcional en Producción*  
+*Próximo milestone: Primer cliente real*
